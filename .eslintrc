@@ -15,7 +15,7 @@
   "overrides": [
     // Configuration for mjs files
     {
-      "files": ["**/*.mjs"],
+      "files": ["**/*.{cjs,mjs}"],
       "parserOptions": {
         "sourceType": "module",
         "ecmaVersion": 2015
@@ -30,7 +30,8 @@
           }
         ],
         "import/no-extraneous-dependencies": "off", // mjs is only used by Astro for configuration, false positive
-        "import/no-unresolved": "off" // Also false positive with mjs file
+        "import/no-unresolved": "off", // Also false positive with mjs file
+        "global-require": "off"
       }
     },
     // Configuration for TypeScript files
