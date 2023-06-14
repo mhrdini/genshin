@@ -1,20 +1,9 @@
 ---
 // Component Imports
-import Button from '@/components/Button.astro'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CharacterLayout from '@/layouts/CharacterLayout.astro'
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-
-  <body>
-    <div class="grid h-screen place-items-center content-center">
-      <Button>Test Button</Button>
-    </div>
-  </body>
-</html>
+<BaseLayout title="Genshin Impact">
+  <CharacterLayout title="Raiden Shogun" />
+</BaseLayout>

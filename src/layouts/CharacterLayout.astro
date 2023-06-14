@@ -1,0 +1,125 @@
+---
+import Button from '@/components/Button'
+import Card from '@/components/Card.astro'
+import Chip from '@/components/Chip'
+import LeftArrow from '@/components/LeftArrow.astro'
+import RightArrow from '@/components/RightArrow.astro'
+
+const { title } = Astro.props
+const navHeaders = [
+  'Materials',
+  'Weapons',
+  'Artifacts',
+  'Stats',
+  'Teams',
+  'Passives',
+  'Constellations',
+  'Ascension',
+]
+---
+
+<script>
+  const leftArrow = document.getElementById('left-arrow')
+  const rightArrow = document.getElementById('right-arrow')
+  const navContainer = document.getElementById('nav-container')
+
+  leftArrow?.addEventListener('click', () => {
+    if (navContainer != null) {
+      navContainer.scrollLeft -= 150
+    }
+  })
+
+  rightArrow?.addEventListener('click', () => {
+    if (navContainer != null) {
+      navContainer.scrollLeft += 150
+    }
+  })
+</script>
+
+<section class="max-h-screen w-11/12">
+  <Card>
+    <div class="flex flex-col md:flex-row">
+      <header
+        class="relative flex shrink flex-col items-center gap-y-3 border-b-2 border-black p-6 text-center md:items-start md:border-b-0 md:border-r-2 md:text-justify"
+      >
+        <img
+          class="w-36 rounded-full ring-2 ring-black transition-colors duration-300 ease-in-out"
+          src="https://cdn.wanderer.moe/genshin-impact/character-icons/raiden-shogun-icon.png"
+          alt="raiden shogun icon"
+        />
+        <div
+          class="absolute right-4 top-4 w-10 rounded-full bg-electro p-1 ring-2 ring-black"
+        >
+          <img
+            src="https://cdn.wanderer.moe/genshin-impact/elements/electro.png"
+            alt="electro"
+          />
+        </div>
+        <h1 class="pt-2 font-heading text-2xl font-bold uppercase md:text-4xl">
+          {title}
+        </h1>
+        <div class="flex gap-x-3">
+          {['Polearm', 'Sub DPS'].map((v) => <Chip content={v} />)}
+        </div>
+      </header>
+      <section class="grid divide-y-2 divide-black">
+        <section
+          class="grid grid-flow-col divide-x-2 divide-black bg-electro md:rounded-tr-3xl"
+        >
+          <button id="left-arrow" class="flex items-center justify-center px-2">
+            <LeftArrow />
+          </button>
+
+          <nav
+            id="nav-container"
+            class="grid snap-x grid-flow-col gap-x-2 overflow-x-auto scroll-smooth py-2"
+          >
+            {
+              navHeaders.map((v) => {
+                const id = v.toLowerCase()
+                return (
+                  <a class="snap-center first:pl-2 last:pr-2" href={`#${id}`}>
+                    <Button title={v} />
+                  </a>
+                )
+              })
+            }
+          </nav>
+          <button id="right-arrow" class="flex items-center justify-center px-2"
+            ><RightArrow /></button
+          >
+        </section>
+        <section
+          class="flex max-h-full scroll-py-2 flex-col gap-y-4 overflow-y-auto scroll-smooth px-4"
+        >
+          {
+            navHeaders.map((v) => {
+              const id = v.toLowerCase()
+
+              return (
+                <div class="grid first:pt-3 last:pb-3" id={id}>
+                  <h2 class="font-heading text-lg font-bold">{v}</h2>
+                  <section>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Illo ullam sequi eos soluta dolorum distinctio, aspernatur
+                    enim. Iste veniam illo ad omnis reprehenderit assumenda
+                    optio beatae itaque, architecto veritatis vitae vero nisi,
+                    ipsum amet nostrum ut reiciendis! Laborum tempora sed,
+                    soluta quos nobis facere, recusandae doloribus voluptatum
+                    sint numquam deserunt incidunt amet debitis repellendus vero
+                    quam sequi expedita accusantium pariatur cum? Delectus
+                    voluptate dolore iste sequi harum, quia vitae eum quo
+                    itaque? Provident autem temporibus neque? Praesentium
+                    nostrum possimus id hic harum officiis, ipsam quia modi
+                    saepe error pariatur suscipit assumenda dicta sapiente
+                    ratione expedita laboriosam qui, soluta alias esse.
+                  </section>
+                </div>
+              )
+            })
+          }
+        </section>
+      </section>
+    </div>
+  </Card>
+</section>

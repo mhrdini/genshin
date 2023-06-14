@@ -1,0 +1,21 @@
+---
+import '@/assets/styles/base.css'
+
+const { generator } = Astro
+const { title } = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="grid h-screen place-items-center content-center overflow-auto bg-base"
+  >
+    <slot />
+  </body>
+</html>

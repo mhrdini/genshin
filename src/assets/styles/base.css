@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Whyte';
+  src: url('Whyte-Regular.woff') format('woff'),
+    url('Whyte-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Whyte Inktrap';
+  src: url('WhyteInktrap-Bold.woff') format('woff');
+}
+
+@layer base {
+  :root {
+    --color-electro: 188 152 203;
+    --color-dendro: 65 211 156;
+    --color-pyro: 243 127 117;
+    --color-geo: 255 208 91;
+    --color-cryo: 185 226 248;
+    --color-hydro: 82 118 197;
+    --color-anemo: 185 231 222;
+    --color-base: 237 236 232;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  * {
+    scrollbar-width: none;
+  }
+}

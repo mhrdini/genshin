@@ -1,12 +1,14 @@
 /** @type {import('prettier').Config} */
 module.exports = {
-  printWidth: 120,
+  printWidth: 80,
   semi: false,
   singleQuote: true,
   tabWidth: 2,
-  trailingComma: 'es5',
   useTabs: false,
-  plugins: [require.resolve('prettier-plugin-astro'), require.resolve('prettier-plugin-tailwindcss')],
+  plugins: [
+    require.resolve('prettier-plugin-astro'),
+    require.resolve('prettier-plugin-tailwindcss'),
+  ],
   pluginSearchDirs: false,
   overrides: [{ files: '*.astro', options: { parser: 'astro' } }],
   tailwindConfig: './tailwind.config.cjs',
