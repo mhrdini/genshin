@@ -1,0 +1,16 @@
+---
+import { ids, names } from '@/assets/characters'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+---
+
+<BaseLayout title="Genshin Impact Characters">
+  <ul>
+    {
+      ids.map((id) => (
+        <li>
+          <a href={`/characters/${id}`}> {names[id]}</a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

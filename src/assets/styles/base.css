@@ -4,13 +4,13 @@
 
 @font-face {
   font-family: 'Whyte';
-  src: url('Whyte-Regular.woff') format('woff'),
-    url('Whyte-Bold.woff') format('woff');
+  src: url('../fonts/Whyte-Regular.woff') format('woff'),
+    url('../fonts/Whyte-Bold.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Whyte Inktrap';
-  src: url('WhyteInktrap-Bold.woff') format('woff');
+  src: url('../fonts/WhyteInktrap-Bold.woff') format('woff');
 }
 
 @layer base {

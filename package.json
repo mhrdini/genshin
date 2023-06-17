@@ -13,7 +13,6 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@astrojs/image": "^0.17.0",
     "@astrojs/react": "^2.2.0",
     "@astrolib/analytics": "^0.3.0",
     "@astrolib/seo": "^0.3.0",

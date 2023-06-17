@@ -1,0 +1,17 @@
+---
+import { ids, names } from '@/assets/characters'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CharacterLayout from '@/layouts/CharacterLayout.astro'
+
+export function getStaticPaths() {
+  return ids.map((id) => ({ params: { character: id } }))
+}
+
+const { character } = Astro.params
+
+const name = character ? names[character] : undefined
+---
+
+<BaseLayout title={`Genshin Impact ${name}`}>
+  <CharacterLayout id={character} />
+</BaseLayout>

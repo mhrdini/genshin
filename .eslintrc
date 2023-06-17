@@ -99,7 +99,7 @@
     {
       "files": ["**/*.astro"],
       "plugins": [
-        // "@typescript-esl int",
+        // "@typescript-eslint",
         "react",
         "unused-imports",
         "tailwindcss",
